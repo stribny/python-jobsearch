@@ -113,7 +113,7 @@ def recommend():
     predicted = job_clf.predict([jp.text for jp in job_list])
     console.print("[yellow]Recommended jobs:[/yellow]")
     for i, jp in enumerate(job_list):
-        if predicted.item(i) == 1:
+        if predicted[i] == JobPostLabel.INTERESTED:
             table.add_row(jp.position, jp.url)    
     console.print(table)
 
