@@ -1,3 +1,4 @@
+from typing import Optional
 from sqlalchemy.orm import Session
 from jobsearch.dataaccess import JobPost
 
@@ -12,7 +13,7 @@ def update(session: Session, post: JobPost) -> None:
     session.commit()
 
 
-def get_last(session: Session) -> JobPost:
+def get_last(session: Session) -> Optional[JobPost]:
     return session.query(JobPost).order_by(JobPost.id.desc()).first()
 
 
@@ -24,5 +25,5 @@ def get_not_labeled(session: Session) -> list[JobPost]:
     return session.query(JobPost).filter(JobPost.label == None).all()
 
 
-def get_next_for_labelling(session: Session) -> JobPost:
+def get_next_for_labelling(session: Session) -> Optional[JobPost]:
     return session.query(JobPost).filter(JobPost.label == None).first()
