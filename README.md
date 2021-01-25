@@ -6,6 +6,8 @@ This tool is based on RemoteOK API and makes it possible to get job recommendati
 
 This is a study application, you will need to improve it for it to really shine!
 
+Read the article: [Finding Remote Work with Python and AI](https://stribny.name/blog/python-job-search/)
+
 ## Installation
 
 Use Poetry to install and run commands:
